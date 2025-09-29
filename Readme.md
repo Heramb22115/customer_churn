@@ -1,6 +1,6 @@
 # **Customer Churn Prediction Pipeline**
 
-##  **Project Overview**
+## **Project Overview**
 
 This project establishes a complete machine learning pipeline to accurately **predict customer churn** in a subscription-based environment. The primary objective is to move from reactive customer service to **proactive retention strategies** by identifying high-risk customers before they cancel their service.
 
@@ -14,7 +14,7 @@ The pipeline covers the entire data science lifecycle: from data acquisition and
 | **Modeling** | Built and evaluated robust **classification models** (Random Forest, Gradient Boosting, Logistic Regression) to predict customer churn. | Scikit-learn |
 | **Reporting** | Designed an interactive **Power BI dashboard** (external) to visualize churn insights, model performance, and high-risk customer lists for stakeholders. | Power BI (External) |
 
-## **🛠️ Technologies & Libraries**
+## **Technologies & Libraries**
 
 * **Language:** Python  
 * **Data Analysis:** pandas, numpy  
@@ -42,15 +42,15 @@ The analysis revealed that **Contract Length** and **Tenure** are the most criti
 
 ### **Model Performance**
 
-After training and hyperparameter tuning, the **Random Forest Classifier** was selected as the optimal model due to its high predictive accuracy.
+After training and initial testing, the **Gradient Boosting Classifier** was selected as the optimal model based on the **highest ROC AUC score (0.7240)**, though further hyperparameter tuning is recommended to improve precision for the Churn class.
 
 | Model | Classification Time (s) | Precision (Churn Class) | F1-Score (Churn Class) | ROC AUC Score |
 | :---- | :---- | :---- | :---- | :---- |
-| Logistic Regression | \~1.5 | 0.82 | 0.82 | 0.9090 |
-| **Random Forest Classifier** | \~4.2 | **0.99** | **0.99** | **0.9996** |
-| Gradient Boosting Classifier | \~3.8 | 0.97 | 0.98 | 0.9984 |
+| Logistic Regression | 3.66 | 0.53 | 0.69 | 0.6892 |
+| Random Forest Classifier | 6.85 | 0.49 | 0.66 | 0.5832 |
+| **Gradient Boosting Classifier** | **68.30** | **0.49** | **0.66** | **0.7240** |
 
-**Final Model:** Random Forest Classifier (ROC AUC: 0.9996)
+**Final Model:** Gradient Boosting Classifier (ROC AUC: 0.7240)
 
 ## **How to Run the Project**
 
@@ -61,4 +61,5 @@ After training and hyperparameter tuning, the **Random Forest Classifier** was s
    python eda.py
 
 3. **Train Models:** Run the main script to load the data, preprocess it, train the models, and display the performance metrics in your console.  
-   python train\_model.py  
+   python train\_model.py
+
